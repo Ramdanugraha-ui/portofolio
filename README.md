@@ -1,11 +1,11 @@
 # 🌐 Visual Portfolio & Digital CV - Ramdan Nugraha, S.Kom
 
-[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fportofolio-two-sable-40.vercel.app%2F&version=2026)](https://portofolio-two-sable-40.vercel.app/)
+[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Framdanugraha.vercel.app%2F&version=2026)](https://ramdanugraha.vercel.app/)
 [![Tech Stack](https://img.shields.io/badge/Tech_Stack-HTML5%20%7C%20TailwindCSS%20%7C%20JavaScript-blue)](#-tech-stack)
 
 Website ini merupakan portofolio visual interaktif dan CV digital resmi saya sebagai lulusan Sistem Informasi. Didesain dengan konsep _modern dark mode dashboard_ untuk menyajikan rekam jejak akademik, keterampilan teknis, serta bukti dokumentasi proyek nyata secara transpiratif kepada rekruter.
 
-🔗 **Live Preview:** [portofolio-two-sable-40.vercel.app](https://portofolio-two-sable-40.vercel.app/)
+🔗 **Live Preview:** [ramdanugraha.vercel.app](https://ramdanugraha.vercel.app/)
 
 ---
 
