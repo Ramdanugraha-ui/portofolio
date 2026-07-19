@@ -5,7 +5,7 @@
 
 Website ini merupakan portofolio visual interaktif dan CV digital resmi saya sebagai lulusan Sistem Informasi. Didesain dengan konsep _modern dark mode dashboard_ untuk menyajikan rekam jejak akademik, keterampilan teknis, serta bukti dokumentasi proyek nyata secara transpiratif kepada rekruter.
 
-🔗 **Live Preview:** [portofolio-two-sable-40.vercel.app](https://portofolio-two-sable-40.vercel.app/)
+🔗 **Live Preview:** [ramdanugraha.vercel.app](https://ramdanugraha.vercel.app/)
 
 ---
 
