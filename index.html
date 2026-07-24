@@ -64,9 +64,6 @@
 
         
             <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                <a href="#experience" class="bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-bold px-5 py-2.5 rounded-lg text-sm transition duration-300 transform hover:-translate-y-0.5">
-                    <i class="fa-solid fa-briefcase mr-2"></i>Lihat Rekam Jejak
-                </a>
                 <a href="https://github.com/Ramdanugraha-ui" target="_blank" class="bg-gray-900 border border-gray-800 hover:border-gray-600 px-5 py-2.5 rounded-lg text-sm transition duration-300">
                     <i class="fa-brands fa-github mr-2"></i>GitHub Portofolio
                 </a>
@@ -211,8 +208,8 @@
                                     <div class="bg-gray-900 p-2 text-center text-[11px] text-gray-300 truncate">Sertifikat Wakil Ketua</div>
                                 </div>
                                 <div class="swiper-slide w-56 rounded-xl overflow-hidden border border-gray-850 bg-gray-950 shrink-0">
-                                    <img src="sertif.jpeg" class="w-full h-36 object-cover">
-                                    <div class="bg-gray-900 p-2 text-center text-[11px] text-gray-300 truncate">Foto Sertif + Bunga Pemberian</div>
+                                    <img src="sertif.JPG" class="w-full h-36 object-cover">
+                                    <div class="bg-gray-900 p-2 text-center text-[11px] text-gray-300 truncate">Foto Bersama HIMASI</div>
                                 </div>
                             </div>
                             <div class="swiper-pagination-infokom text-center mt-3 flex justify-center gap-1"></div>
@@ -488,8 +485,65 @@
             },
             loop: true
         });
-    </script>
+        <!-- Script Fungsi Lightbox Fullscreen -->
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            const modalCaption = document.getElementById("modalCaption");
+            const closeModalBtn = document.getElementById("closeModal");
 
+            // Fungsi Membuka Modal saat Foto Di-klik
+            document.querySelectorAll(".swiper-slide img, .lightbox-trigger").forEach(img => {
+                img.classList.add("cursor-pointer", "hover:opacity-90", "transition");
+                
+                img.addEventListener("click", function () {
+                    modalImg.src = this.src;
+                    
+                    // Ambil teks caption dari div bawahnya (jika ada)
+                    const captionText = this.nextElementSibling ? this.nextElementSibling.innerText : this.alt;
+                    modalCaption.innerText = captionText || "Dokumentasi Visual";
+                    
+                    modal.classList.remove("hidden");
+                    modal.classList.add("flex");
+                });
+            });
+
+            // Fungsi Menutup Modal saat Tombol Close Di-klik
+            closeModalBtn.addEventListener("click", function () {
+                modal.classList.add("hidden");
+                modal.classList.remove("flex");
+            });
+
+            // Fungsi Menutup Modal saat Area Luar Foto Di-klik
+            modal.addEventListener("click", function (e) {
+                if (e.target === modal || e.target === closeModalBtn) {
+                    modal.classList.add("hidden");
+                    modal.classList.remove("flex");
+                }
+            });
+
+            // Fungsi Menutup Modal Pakai Tombol ESC Keyboard
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+                    modal.classList.add("hidden");
+                    modal.classList.remove("flex");
+                }
+            });
+        });
+    </script>
+    <!-- MODAL LIGHTBOX FULLSCREEN (PEMBESAR FOTO) -->
+    <div id="imageModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex-col items-center justify-center p-4 transition-all duration-300">
+        <!-- Tombol Close (X) -->
+        <button id="closeModal" class="absolute top-6 right-6 text-gray-400 hover:text-white text-3xl font-bold transition duration-300 focus:outline-none">
+            &times;
+        </button>
+        
+        <!-- Wadah Gambar Fullscreen -->
+        <div class="max-w-4xl max-h-[85vh] relative flex flex-col items-center">
+            <img id="modalImage" src="" alt="Preview Fullscreen" class="max-w-full max-h-[75vh] object-contain rounded-lg border border-gray-800 shadow-2xl">
+            <p id="modalCaption" class="text-gray-300 text-sm mt-4 font-mono text-center bg-gray-900/80 px-4 py-2 rounded-full border border-gray-800"></p>
+        </div>
+    </div>
  
 </body>
 </html>
